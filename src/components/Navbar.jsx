@@ -27,12 +27,11 @@ const Navbar = () => {
         if (e.target.checked) setDarkMode();
         else setLightMode()
     }
-
     // Dark Mode End
 
 
 
-    const {user, logOut} =useContext(AuthContext);
+    const {user, logOut} = useContext(AuthContext);
 
 
     const handleLogOut = () => {

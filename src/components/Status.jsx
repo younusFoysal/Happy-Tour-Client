@@ -3,7 +3,7 @@ import React from 'react';
 const Status = () => {
     return (
         <div className=" border-y-4 border-emerald-600" >
-            <div className=" h-screen">
+            <div className="">
                 <div className="container mx-auto py-10 text-emerald-600">
                     <div className="text-center">
                         <h2 className="font-bold text-2xl md:text-4xl my-4">Four Reasons why you should choose us</h2>

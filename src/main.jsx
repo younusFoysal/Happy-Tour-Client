@@ -14,6 +14,9 @@ import AuthProvider from "./providers/AuthProvider.jsx";
 import Register from "./components/Register.jsx";
 import About from "./components/About.jsx";
 import Contact from "./components/Contact.jsx";
+import AddTour from "./components/AddTour.jsx";
+import PrivateRoute from "./routes/PrivateRoute.jsx";
+import Tours from "./components/Tours.jsx";
 
 const router = createBrowserRouter([
     {
@@ -41,6 +44,16 @@ const router = createBrowserRouter([
                 path: '/contact',
                 element: <Contact></Contact>
             },
+            {
+                path: '/addtour',
+                element: <PrivateRoute><AddTour></AddTour></PrivateRoute>
+            },
+            {
+                path: '/tours',
+                element: <Tours></Tours>,
+                loader: () => fetch('http://localhost:5000/tour')
+            }
+
         ]
     },
 ]);
