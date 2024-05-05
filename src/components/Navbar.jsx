@@ -20,6 +20,7 @@ const Navbar = () => {
     if (selectedTheme === "dark"){
         setDarkMode();
     }
+    else setLightMode();
     //setDarkMode()
     const toggleTheme = (e) => {
         if (e.target.checked) setDarkMode();
@@ -30,7 +31,7 @@ const Navbar = () => {
 
 
 
-    const user = true
+    const user = false
 
 
     const handleLogOut = () => {
