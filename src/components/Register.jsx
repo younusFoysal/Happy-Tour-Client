@@ -13,7 +13,7 @@ import {Helmet} from "react-helmet-async";
 
 const Register = () => {
 
-    const { signInUser, signInWithGoogle, signInWithGithub } = useContext(AuthContext);
+    const { createUser, signInUser, signInWithGoogle, signInWithGithub } = useContext(AuthContext);
     const navigate = useNavigate();
 
     const [showPassword, setShowPassword] = useState(false);
@@ -54,12 +54,14 @@ const Register = () => {
 
 
         //create user
-        createUserWithEmailAndPassword( auth, email, password)
+
+
+        // adding in DB
+        createUser(email, password)
             .then(result => {
                 console.log(result.user)
                 toast('User Created.')
                 setSuccess('User Created.')
-
 
                 // update profile
                 updateProfile(result.user, {
@@ -72,15 +74,27 @@ const Register = () => {
                 navigate('/')
 
 
-
-
+                const createdAt = result.user?.metadata?.creationTime
+                const user = {email, createAt: createdAt}
+                fetch('http://localhost:5000/user', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(user)
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data)
+                        if (data.insertedId){
+                            toast('User Added in DB.')
+                        }
+                    })
             })
             .catch(error => {
-                console.error(error);
+                console.error(error)
                 setRegisterError(error.message);
             })
-
-
 
 
     }
@@ -93,7 +107,7 @@ const Register = () => {
 
     return (
         <div>
-            <Helmet>SK Real estate | Register </Helmet>
+            <Helmet>Happy Tour | Register </Helmet>
 
             <div className="min-h-screen text-gray-900 flex justify-center ">
                 <div className="max-w-screen-xl m-0 sm:m-10 bg-white shadow sm:rounded-lg flex justify-center flex-1">
