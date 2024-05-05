@@ -29,36 +29,36 @@ const Footer = () => {
 
                             <div className="px-4 my-4 w-full sm:w-auto">
                                 <div>
-                                    <h2 className="inline-block text-2xl pb-4 mb-4 border-b-4 border-blue-600">Company</h2>
+                                    <h2 className="inline-block text-2xl pb-4 mb-4 border-b-4 border-emerald-600">Company</h2>
                                 </div>
                                 <ul className="leading-8">
-                                    <li><a href="/about" className="hover:text-blue-400">About Us</a></li>
-                                    <li><a href="#" className="hover:text-blue-400">Terms &amp; Conditions</a></li>
-                                    <li><a href="#" className="hover:text-blue-400">Privacy Policy</a></li>
-                                    <li><a href="/contact" className="hover:text-blue-400">Contact Us</a></li>
+                                    <li><a href="/about" className="hover:text-emerald-400">About Us</a></li>
+                                    <li><a href="#" className="hover:text-emerald-400">Terms &amp; Conditions</a></li>
+                                    <li><a href="#" className="hover:text-emerald-400">Privacy Policy</a></li>
+                                    <li><a href="/contact" className="hover:text-emerald-400">Contact Us</a></li>
                                 </ul>
                             </div>
                             <div className="px-4 my-4 w-full sm:w-auto">
                                 <div>
-                                    <h2 className="inline-block text-2xl pb-4 mb-4 border-b-4 border-blue-600">Blog</h2>
+                                    <h2 className="inline-block text-2xl pb-4 mb-4 border-b-4 border-emerald-600">Blog</h2>
                                 </div>
                                 <ul className="leading-8">
-                                    <li><a href="#" className="hover:text-blue-400">Getting Started With Local area tours?</a></li>
-                                    <li><a href="#" className="hover:text-blue-400">How to choose best places for a tour?</a>
+                                    <li><a href="#" className="hover:text-emerald-400">Getting Started With Local area tours?</a></li>
+                                    <li><a href="#" className="hover:text-emerald-400">How to choose best places for a tour?</a>
                                     </li>
-                                    <li><a href="#" className="hover:text-blue-400">How tour Can Help Your
+                                    <li><a href="#" className="hover:text-emerald-400">How tour Can Help Your
                                         Productivity?</a></li>
-                                    <li><a href="#" className="hover:text-blue-400">5 Tips to Make Moments in Tour...</a></li>
-                                    <li><a href="#" className="hover:text-blue-400">See More</a></li>
+                                    <li><a href="#" className="hover:text-emerald-400">5 Tips to Make Moments in Tour...</a></li>
+                                    <li><a href="#" className="hover:text-emerald-400">See More</a></li>
                                 </ul>
                             </div>
                             <div className="px-4 my-4 w-full sm:w-auto xl:w-1/5">
                                 <div>
-                                    <h2 className="inline-block text-2xl pb-4 mb-4 border-b-4 border-blue-600">Connect
+                                    <h2 className="inline-block text-2xl pb-4 mb-4 border-b-4 border-emerald-600">Connect
                                         With Us</h2>
                                 </div>
                                 <a href="#"
-                                   className="inline-flex items-center justify-center h-8 w-8 border border-gray-100 rounded-full mr-1 hover:text-blue-400 hover:border-blue-400">
+                                   className="inline-flex items-center justify-center h-8 w-8 border border-gray-100 rounded-full mr-1 hover:text-emerald-400 hover:border-emerald-400">
                                     <svg className="w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg"
                                          viewBox="0 0 320 512">
                                         <path
@@ -66,7 +66,7 @@ const Footer = () => {
                                     </svg>
                                 </a>
                                 <a href="#"
-                                   className="inline-flex items-center justify-center h-8 w-8 border border-gray-100 rounded-full mr-1 hover:text-blue-400 hover:border-blue-400">
+                                   className="inline-flex items-center justify-center h-8 w-8 border border-gray-100 rounded-full mr-1 hover:text-emerald-400 hover:border-emerald-400">
                                     <svg className="w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg"
                                          viewBox="0 0 512 512">
                                         <path
@@ -74,7 +74,7 @@ const Footer = () => {
                                     </svg>
                                 </a>
                                 <a href="#"
-                                   className="inline-flex items-center justify-center h-8 w-8 border border-gray-100 rounded-full mr-1 hover:text-blue-400 hover:border-blue-400">
+                                   className="inline-flex items-center justify-center h-8 w-8 border border-gray-100 rounded-full mr-1 hover:text-emerald-400 hover:border-emerald-400">
                                     <svg className="w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg"
                                          viewBox="0 0 448 512">
                                         <path
@@ -82,7 +82,7 @@ const Footer = () => {
                                     </svg>
                                 </a>
                                 <a href="#"
-                                   className="inline-flex items-center justify-center h-8 w-8 border border-gray-100 rounded-full mr-1 hover:text-blue-400 hover:border-blue-400">
+                                   className="inline-flex items-center justify-center h-8 w-8 border border-gray-100 rounded-full mr-1 hover:text-emerald-400 hover:border-emerald-400">
                                     <svg className="w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg"
                                          viewBox="0 0 496 512">
                                         <path
@@ -90,7 +90,7 @@ const Footer = () => {
                                     </svg>
                                 </a>
                                 <a href="#"
-                                   className="inline-flex items-center justify-center h-8 w-8 border border-gray-100 rounded-full hover:text-blue-400 hover:border-blue-400">
+                                   className="inline-flex items-center justify-center h-8 w-8 border border-gray-100 rounded-full hover:text-emerald-400 hover:border-emerald-400">
                                     <svg className="w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg"
                                          viewBox="0 0 576 512">
                                         <path
@@ -101,7 +101,7 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
-                <div className="bg-indigo-600 py-4 text-gray-100">
+                <div className="bg-emerald-600 py-4 text-gray-100">
                     <div className="container mx-auto px-4">
                         <div className="-mx-4 flex flex-wrap justify-between">
                             <div className="px-4 w-full text-center sm:w-auto sm:text-left">
