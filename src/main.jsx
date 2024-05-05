@@ -8,6 +8,9 @@ import "./index.css";
 import Root from "./components/Root.jsx"
 import NotFound from "./components/NotFound.jsx";
 import Home from "./components/Home.jsx";
+import Login from "./components/Login.jsx";
+import {HelmetProvider} from "react-helmet-async";
+import AuthProvider from "./providers/AuthProvider.jsx";
 
 const router = createBrowserRouter([
     {
@@ -18,6 +21,10 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>
+            },
+            {
+                path: '/login',
+                element: <Login></Login>
             }
         ]
     },
@@ -25,6 +32,11 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
     <React.StrictMode>
-        <RouterProvider router={router} />
+        <HelmetProvider>
+            <AuthProvider>
+                <RouterProvider router={router} />
+            </AuthProvider>
+        </HelmetProvider>
     </React.StrictMode>
 );
+

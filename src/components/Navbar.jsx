@@ -31,7 +31,7 @@ const Navbar = () => {
 
 
 
-    const user = true
+    const user = false
 
 
     const handleLogOut = () => {
@@ -127,7 +127,7 @@ const Navbar = () => {
                             </>
                             :
                             <Link to="/login">
-                                <button className="ml-4 btn btn-primary bg-indigo-600 text-white">Login</button>
+                                <button className="ml-4 btn bg-emerald-600 text-white">Login</button>
                             </Link>
                     }
 
