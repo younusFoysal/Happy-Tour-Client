@@ -31,7 +31,7 @@ const Navbar = () => {
 
 
 
-    const user = false
+    const user = true
 
 
     const handleLogOut = () => {
@@ -40,11 +40,11 @@ const Navbar = () => {
 
     const navLinks = <>
         <li><NavLink to="/" className="mr-2">Home</NavLink></li>
-        <li><NavLink to="/properties" className="mr-2">Properties</NavLink></li>
+        <li><NavLink to="/tours" className="mr-2">All Tourists Spot</NavLink></li>
 
         {user ? <>
-                <li><NavLink to="/favproperties" className="mr-2">Favourite Properties</NavLink></li>
-                <li><NavLink to="/profile" className="mr-2">Profile</NavLink></li>
+                <li><NavLink to="/addtour" className="mr-2">Add Tourists Spot</NavLink></li>
+                <li><NavLink to="/mylist" className="mr-2">My List</NavLink></li>
             </>
             :
             <>
