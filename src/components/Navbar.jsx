@@ -39,7 +39,7 @@ const Navbar = () => {
     }
 
     const navLinks = <>
-        <li><NavLink to="/" className="mr-2">Home</NavLink></li>
+        <li className=""><NavLink to="/" className="mr-2 text-emerald-900">Home</NavLink></li>
         <li><NavLink to="/tours" className="mr-2">All Tourists Spot</NavLink></li>
 
         {user ? <>
@@ -85,7 +85,7 @@ const Navbar = () => {
                         </ul>
                     </div>
                     <Link to="/">
-                        <button className="btn btn-ghost text-xl hover:bg-indigo-600 hover:text-white">Happy Tour
+                        <button className="btn btn-ghost text-xl hover:bg-emerald-600 hover:text-white">Happy Tour
                         </button>
                     </Link>
 
