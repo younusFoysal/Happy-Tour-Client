@@ -31,7 +31,7 @@ const Banner = () => {
                                 <h2 className="text-2xl font-bold uppercase text-emerald-600 lg:text-4xl">Winding
                                     Mountain Road</h2>
                                 <p className="mt-4">
-                                    Happy Tour offers a vast selection of services from Hotel or Resort bookings,
+                                    <b className="text-emerald-600">Happy Tour</b> offers a vast selection of services from Hotel or Resort bookings,
                                     help with international flights or inter-island flights, luxury private taxies or private cars, tours,
                                     and excursions on the Seychelles islands of Mahe, Praslin, and La Digue, airport or ferry pick ups,
                                     we can arrange your perfect restaurant or bar for the perfect romantic evening,
