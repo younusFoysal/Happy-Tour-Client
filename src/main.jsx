@@ -5,7 +5,7 @@ import {
     RouterProvider,
 } from "react-router-dom";
 import "./index.css";
-import {Root} from "postcss";
+import Root from "./components/Root.jsx"
 import NotFound from "./components/NotFound.jsx";
 import Home from "./components/Home.jsx";
 
