@@ -1,8 +1,9 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {Link, NavLink} from "react-router-dom";
 import {toast, ToastContainer} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import '../index.css';
+import {AuthContext} from "../providers/AuthProvider.jsx";
 
 const Navbar = () => {
 
@@ -31,11 +32,19 @@ const Navbar = () => {
 
 
 
-    const user = false
+    const {user, logOut} =useContext(AuthContext);
 
 
     const handleLogOut = () => {
-
+        logOut()
+            .then(() => {
+                toast('Logged Out Successfully')
+            })
+            .catch(
+                error => {
+                    console.error(error)
+                }
+            )
     }
 
     const navLinks = <>
@@ -120,14 +129,13 @@ const Navbar = () => {
 
                                             </a>
                                         </li>
-                                        <li><Link to='/updateProfile'>Update Profile</Link></li>
                                         <li><a onClick={handleLogOut}>Logout</a></li>
                                     </ul>
                                 </div>
                             </>
                             :
                             <Link to="/login">
-                                <button className="ml-4 btn bg-emerald-600 text-white">Login</button>
+                                <button className="ml-4 mr-4 btn bg-emerald-600 text-white">Login</button>
                             </Link>
                     }
 
