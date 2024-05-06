@@ -19,7 +19,9 @@ const AddTour = () => {
         const cname = form.cname.value
         const location = form.location.value
         const details = form.details.value
-        const cost = form.cost.value
+
+        //const cost1 = form.cost.value
+        const cost = Number(form.cost.value)
         const season = form.season.value
         const time = form.time.value
         const visitors = form.visitors.value
@@ -119,7 +121,7 @@ const AddTour = () => {
                         <input
                             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                             id="cost"
-                            type="text"
+                            type="number"
                             name="cost"
                             placeholder="Ex: 7000"
                             required

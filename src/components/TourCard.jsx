@@ -1,7 +1,7 @@
 
 import {Link} from "react-router-dom";
 
-const TourCard = ({ tour, tours, setTours }) => {
+const TourCard = ({ tour }) => {
 
     // eslint-disable-next-line react/prop-types
     const {_id, photo, name, cname, location, details, cost, season, time, visitors, uname, email} = tour;
@@ -48,7 +48,7 @@ const TourCard = ({ tour, tours, setTours }) => {
                             </div>
 
                             <div className="card-actions mt-4">
-                                <Link to={`/tour/${_id}`}>
+                                <Link to={`/tours/${_id}`}>
                                     <button className="btn  bg-emerald-600 text-white">View Details</button>
                                 </Link>
 

@@ -17,16 +17,19 @@ import Contact from "./components/Contact.jsx";
 import AddTour from "./components/AddTour.jsx";
 import PrivateRoute from "./routes/PrivateRoute.jsx";
 import Tours from "./components/Tours.jsx";
+import TourDetails from "./components/TourDetails.jsx";
+import MyList from "./components/MyList.jsx";
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <Root></Root>,
-        errorElement: <NotFound></NotFound>,
+
         children: [
             {
                 path: '/',
                 element: <Home></Home>,
+
             },
             {
                 path: '/login',
@@ -51,8 +54,19 @@ const router = createBrowserRouter([
             {
                 path: '/tours',
                 element: <Tours></Tours>,
-                loader: () => fetch('http://localhost:5000/tour')
+                //loader: () => fetch('http://localhost:5000/tour')
+            },
+            {
+                path: '/tours/:id',
+                element: <PrivateRoute><TourDetails></TourDetails></PrivateRoute>,
+                loader: ({params}) => fetch(`http://localhost:5000/tour/${params.id}`)
+            },
+            {
+                path: '/mylist/',
+                element: <PrivateRoute><MyList></MyList></PrivateRoute>,
+                //loader: ({params}) => fetch(`http://localhost:5000/tour/${params.email}`)
             }
+
 
         ]
     },
