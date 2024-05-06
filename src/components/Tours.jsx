@@ -1,18 +1,27 @@
-import React, {useState} from 'react';
+
+import React, {useEffect, useState} from 'react';
 import {useLoaderData} from "react-router-dom";
 import TourCard from "./TourCard.jsx";
 import {Helmet} from "react-helmet-async";
 
 const Tours = () => {
 
-    const loadedTours = useLoaderData();
-    const [tours, setTours] = useState(loadedTours)
-    const [dataLength, setDatatLength] = useState(6)
+    // another method that not working
+    //const loadedTours = useLoaderData();
+    //const [tours, setTours] = useState(loadedTours);
+    const [dataLength, setDataLength] = useState(6)
+    //console.log(loadedTours)
 
-    console.log(loadedTours)
+    const [tours, setTours] = useState([])
+
+    useEffect(() => {
+        fetch('http://localhost:5000/tour')
+            .then(res => res.json())
+            .then(data => setTours(data))
+    }, []);
 
 
-    return (<div>
+    return (<div className="mb-10">
 
             <Helmet>Happy Tour | Tourists Spots </Helmet>
 
@@ -30,6 +39,8 @@ const Tours = () => {
                     tours.slice(0, dataLength).map(tour => <TourCard
                         key={tour._id}
                         tour={tour}
+                        tours={tours}
+                        setTours={setTours}
                     ></TourCard>)
                 }
 
@@ -38,9 +49,9 @@ const Tours = () => {
 
             <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
 
-                <div className={dataLength === tours.length ? 'hidden' : ''}>
+                <div className={dataLength === tours?.length ? 'hidden' : ''}>
 
-                    <button onClick={() => setDatatLength(tours.length)}
+                    <button onClick={() => setDataLength(tours?.length)}
                             className="btn bg-emerald-600 text-center items-center text-white">
                         All Tourists Spots
                     </button>

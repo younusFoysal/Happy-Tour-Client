@@ -1,9 +1,13 @@
-import React from 'react';
+
 import {Link} from "react-router-dom";
 
-const TourCard = ({ tour }) => {
+const TourCard = ({ tour, tours, setTours }) => {
 
+    // eslint-disable-next-line react/prop-types
     const {_id, photo, name, cname, location, details, cost, season, time, visitors, uname, email} = tour;
+
+    //const remaninig = tours.filter(cof => cof._id !== _id);
+    //setTours(remaninig)
 
     return (
         <div className="w-full">

@@ -6,6 +6,9 @@ import Community from "./Community.jsx";
 import Tours from "./Tours.jsx";
 
 const Home = () => {
+
+
+
     return (
         <div>
             <Banner></Banner>
