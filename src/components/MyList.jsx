@@ -14,7 +14,7 @@ const MyList = () => {
     const [tours, setTours] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/my-list/${user.email}`)
+        fetch(`https://happy-tour-server-alpha.vercel.app/my-list/${user.email}`)
             .then(res => res.json())
             .then(data => setTours(data))
             .catch(error => console.error('Error fetching tours:', error));
@@ -38,7 +38,7 @@ const MyList = () => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:5000/tour/${_id}`, {
+                fetch(`https://happy-tour-server-alpha.vercel.app/tour/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())

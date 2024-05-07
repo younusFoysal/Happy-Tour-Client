@@ -32,7 +32,7 @@ const AddTour = () => {
         console.log(newTour)
 
         // send data to the server
-        fetch('http://localhost:5000/tour', {
+        fetch('https://happy-tour-server-alpha.vercel.app/tour', {
             method: 'POST',
             headers: {
                 'content-type' : 'application/json'

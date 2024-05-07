@@ -76,7 +76,7 @@ const Register = () => {
 
                 const createdAt = result.user?.metadata?.creationTime
                 const user = {email, createAt: createdAt}
-                fetch('http://localhost:5000/user', {
+                fetch('https://happy-tour-server-alpha.vercel.app/user', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'

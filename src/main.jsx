@@ -57,27 +57,27 @@ const router = createBrowserRouter([
             {
                 path: '/tours',
                 element: <Tours></Tours>,
-                //loader: () => fetch('http://localhost:5000/tour')
+                //loader: () => fetch('https://happy-tour-server-alpha.vercel.app/tour')
             },
             {
                 path: '/tours/:id',
                 element: <PrivateRoute><TourDetails></TourDetails></PrivateRoute>,
-                loader: ({params}) => fetch(`http://localhost:5000/tour/${params.id}`)
+                loader: ({params}) => fetch(`https://happy-tour-server-alpha.vercel.app/tour/${params.id}`)
             },
             {
                 path: '/mylist/',
                 element: <PrivateRoute><MyList></MyList></PrivateRoute>,
-                //loader: ({params}) => fetch(`http://localhost:5000/tour/${params.email}`)
+                //loader: ({params}) => fetch(`https://happy-tour-server-alpha.vercel.app/tour/${params.email}`)
             },
             {
                 path: '/mylist/updatetour/:id',
                 element: <PrivateRoute><UpdateTour></UpdateTour></PrivateRoute>,
-                loader: ({params}) => fetch(`http://localhost:5000/tour/${params.id}`)
+                loader: ({params}) => fetch(`https://happy-tour-server-alpha.vercel.app/tour/${params.id}`)
             },
             {
                 path: '/countries/:id',
                 element: <CountryDetails></CountryDetails>,
-                loader: ({params}) => fetch(`http://localhost:5000/countries/${params.id}`)
+                loader: ({params}) => fetch(`https://happy-tour-server-alpha.vercel.app/countries/${params.id}`)
             }
 
 

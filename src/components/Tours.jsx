@@ -21,7 +21,7 @@ const Tours = () => {
     // const [tours, setTours] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5000/tour')
+        fetch('https://happy-tour-server-alpha.vercel.app/tour')
             .then(res => res.json())
             .then(data => setUnsortedTours(data))
             .catch(error => console.error('Error fetching tours:', error));

@@ -34,7 +34,7 @@ const UpdateTour = () => {
         console.log(updatedTour)
 
         // send data to the server
-        fetch(`http://localhost:5000/tour/${_id}`, {
+        fetch(`https://happy-tour-server-alpha.vercel.app/tour/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type' : 'application/json'
