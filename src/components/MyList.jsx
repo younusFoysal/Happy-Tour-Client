@@ -2,7 +2,7 @@ import React, {useContext, useEffect} from 'react';
 import {AuthContext} from "../providers/AuthProvider.jsx";
 import {useState} from "react";
 import Swal from "sweetalert2";
-import {useLoaderData} from "react-router-dom";
+import {Link, useLoaderData} from "react-router-dom";
 
 
 
@@ -24,8 +24,42 @@ const MyList = () => {
         console.log('okkkkkkkkkk')
     }
 
-    const handleDelete = () => {
-        console.log('delete')
+    const handleDelete = _id => {
+        console.log(_id);
+
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+
+                fetch(`http://localhost:5000/tour/${_id}`, {
+                    method: 'DELETE'
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                        if (data.deletedCount > 0){
+                            Swal.fire({
+                                title: "Deleted!",
+                                text: "Tour Spot has been deleted.",
+                                icon: "success"
+                            });
+
+
+                            const remaining = tours.filter(tour => tour._id !== _id);
+                            setTours(remaining);
+                        }
+                    })
+            }
+        });
+
+
     }
 
 
@@ -34,8 +68,8 @@ const MyList = () => {
         <div className="mb-20">
 
             <div className="text-center p-10 mb-4 ">
-                <h1 className="font-bold text-4xl mb-4">{user.displayName} Tourists Spots: {tours.length}</h1>
-                <h1 className="text-3xl">Manage your spots {user.email}</h1>
+                <h1 className="font-bold text-4xl mb-4"> Your Tourists Spots: {tours.length}</h1>
+                <h1 className="text-3xl">Manage your spots</h1>
             </div>
 
 
@@ -61,7 +95,7 @@ const MyList = () => {
                                 <td className="py-4 px-6 border-b border-gray-200 truncate">{tour.cname}</td>
                                 <td className="py-4 px-6 border-b border-gray-200">{tour.cost} /year</td>
                                 <td className="py-4 px-6 border-b border-gray-200 ">
-                                    <span onClick={() => handleUpdate(tour._id)} className="bg-green-500 hover:bg-green-700 text-white py-1 px-2 rounded-full text-xs mr-2">Update</span>
+                                    <Link to={`updatetour/${tour._id}`}><span className="bg-green-500 hover:bg-green-700 text-white py-1 px-2 rounded-full text-xs mr-2">Update</span></Link>
                                     <span onClick={() => handleDelete(tour._id)} className="bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded-full text-xs">Delete</span>
                                 </td>
                             </tr>

@@ -19,6 +19,9 @@ import PrivateRoute from "./routes/PrivateRoute.jsx";
 import Tours from "./components/Tours.jsx";
 import TourDetails from "./components/TourDetails.jsx";
 import MyList from "./components/MyList.jsx";
+import UpdateTour from "./components/UpdateTour.jsx";
+import * as path from "path";
+import CountryDetails from "./components/CountryDetails.jsx";
 
 const router = createBrowserRouter([
     {
@@ -65,7 +68,18 @@ const router = createBrowserRouter([
                 path: '/mylist/',
                 element: <PrivateRoute><MyList></MyList></PrivateRoute>,
                 //loader: ({params}) => fetch(`http://localhost:5000/tour/${params.email}`)
+            },
+            {
+                path: '/mylist/updatetour/:id',
+                element: <PrivateRoute><UpdateTour></UpdateTour></PrivateRoute>,
+                loader: ({params}) => fetch(`http://localhost:5000/tour/${params.id}`)
+            },
+            {
+                path: '/countries/:id',
+                element: <CountryDetails></CountryDetails>,
+                loader: ({params}) => fetch(`http://localhost:5000/countries/${params.id}`)
             }
+
 
 
         ]

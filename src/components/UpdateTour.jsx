@@ -1,16 +1,19 @@
-import Swal from 'sweetalert2';
-
-import {useContext} from "react";
+import React, {useContext, useEffect, useState} from 'react';
 import {AuthContext} from "../providers/AuthProvider.jsx";
+import {useLoaderData, useNavigate} from "react-router-dom";
+import Swal from "sweetalert2";
 
-const AddTour = () => {
+const UpdateTour = () => {
 
     const {user} = useContext(AuthContext);
+    const navigate = useNavigate();
+
+    const tours = useLoaderData();
+    const {_id, photo, name, cname, location, details, cost, season, time, visitors, uname} = tours;
 
 
-    const handleAddTour = e => {
+    const handleUpdateTour = e => {
         e.preventDefault();
-
 
         const form = e.target;
 
@@ -27,35 +30,33 @@ const AddTour = () => {
         const email = form.email.value
 
 
-
-        const newTour = {photo, name, cname, location, details, cost, season, time, visitors, uname, email}
-        console.log(newTour)
+        const updatedTour = {photo, name, cname, location, details, cost, season, time, visitors, uname, email}
+        console.log(updatedTour)
 
         // send data to the server
-        fetch('http://localhost:5000/tour', {
-            method: 'POST',
+        fetch(`http://localhost:5000/tour/${_id}`, {
+            method: 'PUT',
             headers: {
                 'content-type' : 'application/json'
             },
-            body: JSON.stringify(newTour)
+            body: JSON.stringify(updatedTour)
         })
             .then(res => res.json())
             .then(data => {
                 console.log(data)
-                if (data.insertedId){
+                if (data.modifiedCount > 0){
                     Swal.fire({
                         title: 'Success!',
-                        text: 'Tourists Spot Added Successfully',
+                        text: 'Tour Spot Updated Successfully',
                         icon: 'success',
                         confirmButtonText: 'Okay'
                     })
-                    e.target.reset();
+
+                    navigate('/mylist');
                 }
             })
 
     }
-
-
 
     return (
         <div>
@@ -65,7 +66,7 @@ const AddTour = () => {
                 </div>
 
 
-                <form onSubmit={handleAddTour} className="py-4 px-6">
+                <form onSubmit={handleUpdateTour} className="py-4 px-6">
 
 
                     <div className="mb-4">
@@ -77,6 +78,7 @@ const AddTour = () => {
                             id="name"
                             name="name"
                             type="text"
+                            defaultValue={name}
                             placeholder="Enter spot name"
                             required
                         />
@@ -89,6 +91,7 @@ const AddTour = () => {
                             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                             id="service"
                             name="cname"
+                            defaultValue={cname}
                             required
                         >
                             <option value="bangladesh">Bangladesh</option>
@@ -108,6 +111,7 @@ const AddTour = () => {
                             id="location"
                             type="text"
                             name="location"
+                            defaultValue={location}
                             placeholder="Rangamati"
                             required
                         />
@@ -121,6 +125,7 @@ const AddTour = () => {
                             id="cost"
                             type="number"
                             name="cost"
+                            defaultValue={cost}
                             placeholder="Ex: 7000"
                             required
                         />
@@ -133,6 +138,7 @@ const AddTour = () => {
                             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                             id="season"
                             type="text"
+                            defaultValue={season}
                             name="season"
                             placeholder="Summer, Winter"
                             required
@@ -147,6 +153,7 @@ const AddTour = () => {
                             id="time"
                             type="text"
                             name="time"
+                            defaultValue={time}
                             placeholder="7 Days"
                             required
                         />
@@ -160,6 +167,7 @@ const AddTour = () => {
                             id="visitors"
                             type="text"
                             name="visitors"
+                            defaultValue={visitors}
                             placeholder="10000"
                             required
                         />
@@ -175,6 +183,7 @@ const AddTour = () => {
                             id="uname"
                             name="uname"
                             type="text"
+                            defaultValue={uname}
                             placeholder="Enter Your Name"
                             required
                         />
@@ -202,6 +211,7 @@ const AddTour = () => {
                             id="details"
                             rows="4"
                             name="details"
+                            defaultValue={details}
                             placeholder="Write a few description about the place"
                             required
                         ></textarea>
@@ -215,6 +225,7 @@ const AddTour = () => {
                             id="photo"
                             name="photo"
                             type="url"
+                            defaultValue={photo}
                             placeholder="https://i.ibb.co/qNynF26/pexels.jpg"
                             required
                         />
@@ -225,7 +236,7 @@ const AddTour = () => {
                         <button
                             className="bg-emerald-900 text-white py-2 px-4 rounded hover:bg-emerald-800 focus:outline-none focus:shadow-outline"
                             type="submit">
-                            Add Place
+                            Update Place
                         </button>
                     </div>
 
@@ -236,4 +247,4 @@ const AddTour = () => {
     );
 };
 
-export default AddTour;
+export default UpdateTour;
