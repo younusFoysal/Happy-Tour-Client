@@ -1,8 +1,43 @@
-# React + Vite
+# Happy Tour
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Features: 
+* User can Login with Google & Github account.
+* User can Add,Update, Delete Tourists spots.
+* Have 9 different Tourists spots details.
+* User see the list of Tourist places those are added by him.
+* Contact Us page contains a map with Company location.
 
-Currently, two official plugins are available:
+## Live Link:
+ 
+ [https://happy-tour-d80ae.web.app/](https://happy-tour-d80ae.web.app/) 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+Installed Npm Packages:
+```
+Firebase
+Google Map React
+Moment
+Localforage
+match-sorter
+prop-types
+react
+react-dom
+react-icons
+react-hook-form
+react-router-dom
+react-toastify
+react-tooltip
+react-simple-typewriter
+sort-by
+sweetalert2
+daisyui
+postcss
+tailwindcss
+vite
+react-leaflet
+react-fast-marquee
+aos
+animate.css
+react-helmet-async
+```
+
