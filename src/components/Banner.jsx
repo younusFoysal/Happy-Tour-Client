@@ -1,6 +1,7 @@
-import React from 'react';
+import { Typewriter } from 'react-simple-typewriter'
 
 const Banner = () => {
+
 
     const slideStyle = {
         "enable-background" : "new 0 0 56.966 56.966"
@@ -28,8 +29,19 @@ const Banner = () => {
                             className="max-w-lg bg-white md:max-w-2xl md:z-10 md:shadow-lg md:absolute md:top-0 md:mt-48 lg:w-3/5 lg:left-0 lg:mt-20 lg:ml-20 xl:mt-24 xl:ml-12">
 
                             <div className="flex flex-col p-12 md:px-16">
-                                <h2 className="text-2xl font-bold uppercase text-emerald-600 lg:text-4xl">Winding
-                                    Mountain Road</h2>
+                                <h2 className="text-2xl font-bold uppercase text-emerald-600 lg:text-4xl">
+
+                                    <Typewriter
+                                        words={['Explore Word with Us','Winding Mountain Road', 'Enjoy and', 'Repeat!']}
+                                        loop={20}
+                                        cursor
+                                        cursorStyle='_'
+                                        typeSpeed={70}
+                                        deleteSpeed={50}
+                                        delaySpeed={1000}
+                                    />
+
+                                </h2>
                                 <p className="mt-4">
                                     <b className="text-emerald-600">Happy Tour</b> offers a vast selection of services from Hotel or Resort bookings,
                                     help with international flights or inter-island flights, luxury private taxies or private cars, tours,
