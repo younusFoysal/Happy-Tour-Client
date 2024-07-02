@@ -13,6 +13,8 @@
 Server Repo Link: [Happy-Tour-Server-Repo](https://github.com/younusFoysal/Happy-Tour-Server)
 
 ## Overview:
+- **Comprehensive Travel Planning:** Simplifies booking and organizing trips for various durations and destinations.
+- **Enhanced Travel Experience:** Aims to provide a seamless and enjoyable travel experience by offering all necessary tools and information.
 
 
 ## Features: 
