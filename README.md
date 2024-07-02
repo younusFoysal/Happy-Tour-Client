@@ -1,4 +1,19 @@
-# Happy Tour
+
+<h1 align="center">Happy Tour</h1>
+
+<p align="center">
+  <img src="public/happyTourClient.gif" alt="Hr Hub Pro">
+</p>
+<br>
+
+## Live Link:
+
+[https://happy-tour-d80ae.web.app](https://happy-tour-d80ae.web.app/)
+
+Server Repo Link: [Happy-Tour-Server-Repo](https://github.com/younusFoysal/Happy-Tour-Server)
+
+## Overview:
+
 
 ## Features: 
 * User can Login with Google & Github account.
@@ -7,9 +22,6 @@
 * User see the list of Tourist places those are added by him.
 * Contact Us page contains a map with Company location.
 
-## Live Link:
- 
- [https://happy-tour-d80ae.web.app/](https://happy-tour-d80ae.web.app/) 
 
 
 Installed Npm Packages:
@@ -17,9 +29,6 @@ Installed Npm Packages:
 Firebase
 Google Map React
 Moment
-Localforage
-match-sorter
-prop-types
 react
 react-dom
 react-icons
@@ -40,4 +49,22 @@ aos
 animate.css
 react-helmet-async
 ```
+
+
+### How to Set Up Locally
+
+1. Install npm packages:
+    ```sh
+    npm i
+    ```
+2. Create a `.env.local` file containing API keys and Firebase credentials.
+3. Run the API server from [Happy-Tour-Server](https://github.com/younusFoysal/Happy-Tour-Server).
+4. Run the development server:
+    ```sh
+    npm run dev
+    ```
+5. Browse the application at:
+    ```sh
+    http://localhost:5173/
+    ```
 
